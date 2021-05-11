@@ -30,20 +30,33 @@ const StyledSearchBar = styled.div`
             width: 6rem;
         }
     }
-   
 `;
 
-var SearchBar = () => {
+var SearchBar = ({ searchByTitle }) => {
+    const handleSearch = (e) => {
+        e.preventDefault();
+        searchByTitle(e.target.elements[0].value);  
+    };
     return (
         <StyledSearchBar>
-            <Form className="search-form">
+            <Form className='search-form' onSubmit={handleSearch}>
                 <Form.Label>Query by Terms in Paper Title:</Form.Label>
-                <i className="fas fa-search search-form-icon"></i>
-                <Form.Control className="search-form-input" type="text" placeholder="" />
-                <Button className="search-form-btn" variant="primary" type="submit"> Search </Button>
+                <i className='fas fa-search search-form-icon'></i>
+                <Form.Control
+                    className='search-form-input'
+                    type='text'
+                    placeholder=''
+                />
+                <Button
+                    className='search-form-btn'
+                    variant='primary'
+                    type='submit'>
+                    {' '}
+                    Search{' '}
+                </Button>
             </Form>
         </StyledSearchBar>
     );
-}
+};
 
 export default SearchBar;
