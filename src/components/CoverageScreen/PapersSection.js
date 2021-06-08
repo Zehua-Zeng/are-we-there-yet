@@ -7,7 +7,8 @@ import PaperDetails from './PaperDetails';
 import styled from 'styled-components';
 
 const StyledPapersSection = styled.div`
-    width: calc(100% - 32rem);
+    /* width: calc(100% - 32rem); */
+    width: 100%;
     .card {
         max-height: 45.23rem;
         overflow-y: auto;

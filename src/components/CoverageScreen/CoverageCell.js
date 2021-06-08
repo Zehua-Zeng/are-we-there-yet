@@ -62,9 +62,30 @@ const StyledCellContainer = styled.div`
         color: lightgrey;
         background-color: lightgrey;
     }
+
+    .coverage-none:hover {
+        color: #70C2E8;
+        background-color: #70C2E8;
+    }
+
+    .coverage-none-active {
+        background-color: rgb(77, 171, 214);
+    }
+
+    .coverage-none-deactive {
+        cursor: pointer;
+        color: lightgrey;
+        background-color: lightgrey;
+    }
+
+    .coverage-none-deactive:hover {
+        color: #70C2E8;
+        background-color: #70C2E8;
+    }
+
 `;
 
-var CoverageCell = ({category, name, handleClick, status}) => {
+var CoverageCell = ({category, name, handleClick, status, isActive, type}) => {
     const [active, setActive] = React.useState(status);
 
     let clickEvent = () => {
@@ -77,9 +98,24 @@ var CoverageCell = ({category, name, handleClick, status}) => {
     }, [status]);
 
     if (category.localeCompare("coverage-none") === 0) {
+        // filter matrix cell have states depends on parent component
+        if (type === 'filter') {
+            return (
+                <StyledCellContainer>
+                    <div className={`grid-values ${isActive ? "coverage-none-active active-value" : "coverage-none-deactive"}`} onClick={() => handleClick()}>
+                        {isActive ? <i className="fas fa-check"></i> : <p>X</p>}
+                    </div>
+                </StyledCellContainer>
+                
+            );
+        }
+
         return (<StyledCellContainer>
-        <div className={`grid-values ${category}`}>
+        {/* <div className={`grid-values ${category} active-value`} onClick={() => clickEvent()}>
             X
+        </div> */}
+        <div className={`grid-values ${active ? "coverage-none-active active-value" : "coverage-none-deactive"}`} onClick={() => clickEvent()}>
+            {active ? <i className="fas fa-check"></i> : <p>X</p>}
         </div>
     </StyledCellContainer>);
     }
@@ -89,6 +125,7 @@ var CoverageCell = ({category, name, handleClick, status}) => {
             <div className={`grid-values ${active ? category+"-active active-value" : category+"-deactive"}`} onClick={() => clickEvent()}>
                {active ?  <i className="fas fa-check"></i> : <p>X</p> }
             </div>
+
         </StyledCellContainer>
     );
    

@@ -402,25 +402,30 @@ const CoverageScreen = () => {
 
     useEffect(() => {
         updateFilteredSelectedPaper();
-    },[selectedPapers])
+    },[selectedPapers]);
+
+
     return (
         <StyledCoverageScreen>
-            <SearchBar searchByTitle={searchByTitle} />
+            {/* <SearchBar searchByTitle={searchByTitle} /> */}
             <CoverageFilter
+                searchByTitle={searchByTitle}
                 tasks={data.tasks}
                 setTasks={setSelectedTasks}
                 searchByPaperType={searchByPaperType}
                 setSelectedPapers={setSelectedPapers}
                 deleteSelectedTasks={deleteSelectedTasks}
                 addSelectedTasks={addSelectedTasks}
+                encodingTypes={encodingTypes}
+                coverage_data={data.coverages}
+                modPapers={modifySelectedPapers}
             />
             <div className='container-flex'>
-                <CoverageContainer
+                {/* <CoverageContainer
                     coverage_data={data}
-                    paper_data={abstractedPaperData}
                     encodingTypes={encodingTypes}
                     modPapers={modifySelectedPapers}
-                />
+                /> */}
                 <PapersSection
                     selected_paper={filteredSelectedPapers}
                     papers={abstractedPaperData}

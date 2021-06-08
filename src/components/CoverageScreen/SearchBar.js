@@ -9,10 +9,16 @@ import styled from 'styled-components';
 const StyledSearchBar = styled.div`
     width: 100%;
     position: relative;
+    margin: 20px 0 20px 0;
 
     .search-form {
         display: flex;
         justify-content: center;
+
+        .form-label{
+            font-weight: 500;
+        }
+
         .search-form-icon {
             position: absolute;
             font-size: 1.2rem;
