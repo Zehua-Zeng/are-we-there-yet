@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 // components
 import {
-    SearchBar,
     CoverageFilter,
     CoverageContainer,
     PapersSection,
+    WaffleChart
 } from '../components';
 // local data (can be removed after backend is built)
 import coverages from '../resources/data/coverages.json';
@@ -18,6 +18,7 @@ const StyledCoverageScreen = styled.div`
 
     .container-flex {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
     }
 `;
@@ -407,7 +408,6 @@ const CoverageScreen = () => {
 
     return (
         <StyledCoverageScreen>
-            {/* <SearchBar searchByTitle={searchByTitle} /> */}
             <CoverageFilter
                 searchByTitle={searchByTitle}
                 tasks={data.tasks}
@@ -426,6 +426,7 @@ const CoverageScreen = () => {
                     encodingTypes={encodingTypes}
                     modPapers={modifySelectedPapers}
                 /> */}
+                <WaffleChart data={data} encodingTypes={encodingTypes}/>
                 <PapersSection
                     selected_paper={filteredSelectedPapers}
                     papers={abstractedPaperData}
