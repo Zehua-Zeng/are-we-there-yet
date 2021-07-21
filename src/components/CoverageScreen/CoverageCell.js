@@ -85,7 +85,7 @@ const StyledCellContainer = styled.div`
 
 `;
 
-var CoverageCell = ({category, name, handleClick, status, isActive, type}) => {
+var CoverageCell = ({row, category, name, handleClick, status, isActive, type}) => {
     const [active, setActive] = React.useState(status);
 
     let clickEvent = () => {
@@ -101,7 +101,7 @@ var CoverageCell = ({category, name, handleClick, status, isActive, type}) => {
         // filter matrix cell have states depends on parent component
         if (type === 'filter') {
             return (
-                <StyledCellContainer>
+                <StyledCellContainer key={`${name}-${row}`} data-testid={name} id={`${name}-${row}`}>
                     <div className={`grid-values ${isActive ? "coverage-none-active active-value" : "coverage-none-deactive"}`} onClick={() => handleClick()}>
                         {isActive ? <i className="fas fa-check"></i> : <p>X</p>}
                     </div>
@@ -121,7 +121,7 @@ var CoverageCell = ({category, name, handleClick, status, isActive, type}) => {
     }
     
     return (
-        <StyledCellContainer key={name}>
+        <StyledCellContainer key={name} id={`${name}-${row}`}>
             <div className={`grid-values ${active ? category+"-active active-value" : category+"-deactive"}`} onClick={() => clickEvent()}>
                {active ?  <i className="fas fa-check"></i> : <p>X</p> }
             </div>

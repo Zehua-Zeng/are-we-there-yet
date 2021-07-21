@@ -1,3 +1,4 @@
+import React from 'react';
 // local components
 // bootstrap components
 import Form from 'react-bootstrap/Form';

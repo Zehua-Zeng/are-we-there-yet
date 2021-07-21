@@ -6,3 +6,5 @@ export { default as CoverageFilter } from './CoverageScreen/CoverageFilter';
 export { default as CoverageContainer} from './CoverageScreen/CoverageContainer';
 export { default as PapersSection} from './CoverageScreen/PapersSection';
 export { default as WaffleChart} from './CoverageScreen/WaffleChart';
+// Encoding Screen
+export { default as EncodingFilter } from './EncodingScreen/EncodingFilter';

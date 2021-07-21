@@ -1,3 +1,4 @@
+import React from 'react';
 // boostrap components
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -31,8 +32,8 @@ var Header = () => {
                     </Nav>
                     <Nav>
                         <Nav.Link href="#gettingStarted">Geeting Started</Nav.Link>
-                        <Nav.Link href="#coverage"> Explore by Coverage </Nav.Link>
-                        <Nav.Link href="#encodings"> Explore by Encodings </Nav.Link>
+                        <Nav.Link href="/"> Explore by Coverage </Nav.Link>
+                        <Nav.Link href="/encodings"> Explore by Encodings </Nav.Link>
                         <Nav.Link href="#dataTypes"> Explore by DataTypes </Nav.Link>
                         <Nav.Link href="#About Us"> About Us </Nav.Link>
                     </Nav>

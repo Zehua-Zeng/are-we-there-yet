@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render experiemnt cell matches snapshot 1`] = `
+<div
+  className="sc-bdnxRM kYbNFG"
+  data-testid="PXPY"
+>
+  <div
+    className="grid-values experiment-deactive"
+  >
+    <span
+      className="tooltiptext"
+    >
+      <div>
+        <p
+          className="tooltip-title"
+        >
+          Coverage:
+        </p>
+        <p
+          className="tooltip-tag tag-experiment"
+        >
+                  
+          experiment
+        </p>
+      </div>
+      <div>
+        <p
+          className="tooltip-title"
+        >
+          Encoding Design:
+        </p>
+        <p
+          className="tooltip-tag tag-design"
+        >
+          PXPY
+        </p>
+      </div>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`should render hybrid cell matches snapshot 1`] = `
+<div
+  className="sc-bdnxRM kYbNFG"
+  data-testid="PXPY"
+>
+  <div
+    className="grid-values hybrid-deactive"
+  >
+    <span
+      className="tooltiptext"
+    >
+      <div>
+        <p
+          className="tooltip-title"
+        >
+          Coverage:
+        </p>
+        <p
+          className="tooltip-tag tag-hybrid"
+        >
+                  
+          hybrid
+        </p>
+      </div>
+      <div>
+        <p
+          className="tooltip-title"
+        >
+          Encoding Design:
+        </p>
+        <p
+          className="tooltip-tag tag-design"
+        >
+          PXPY
+        </p>
+      </div>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`should render theory cell matches snapshot 1`] = `
+<div
+  className="sc-bdnxRM kYbNFG"
+  data-testid="PXPY"
+>
+  <div
+    className="grid-values theory-deactive"
+  >
+    <span
+      className="tooltiptext"
+    >
+      <div>
+        <p
+          className="tooltip-title"
+        >
+          Coverage:
+        </p>
+        <p
+          className="tooltip-tag tag-theory"
+        >
+                  
+          theory
+        </p>
+      </div>
+      <div>
+        <p
+          className="tooltip-title"
+        >
+          Encoding Design:
+        </p>
+        <p
+          className="tooltip-tag tag-design"
+        >
+          PXPY
+        </p>
+      </div>
+    </span>
+  </div>
+</div>
+`;

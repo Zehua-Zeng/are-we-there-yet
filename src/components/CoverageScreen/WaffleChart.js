@@ -30,7 +30,6 @@ var WaffleChart = ({data, encodingTypes}) => {
         var i = 0;
         for (var encoding of Object.entries(data.coverages)) {
             for (var design of Object.keys(encoding[1])) {
-                console.log(design);
                 i++;
             }
         }

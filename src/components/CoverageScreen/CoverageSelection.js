@@ -126,6 +126,19 @@ const CoverageSelection = ({types, coverage_data, modPapers}) => {
         let arr = combination.filter( e => e !== '');
         // sort in alphabetical order
         arr.sort();
+
+        let cpy = [];
+        // check for duplicates
+        for (let e of arr) {
+            if (cpy.includes(e)) {
+                setSelectedFirstEncoding('');
+                setSelectedSecondEncoding('');
+                setSelectedThirdEncoding('');
+                console.log(`Error: duplicate encoding selected`);
+                return;
+            } 
+            cpy.push(e);
+        }
         
         // create key
         var k =  arr.join();
@@ -177,7 +190,7 @@ const CoverageSelection = ({types, coverage_data, modPapers}) => {
 
 
     return (
-        <StyledCoverageSelection>
+        <StyledCoverageSelection data-testid="coverage-selection">
             {Object.values(encodingList).length === 0 ?
                 ''
                 :
@@ -186,8 +199,13 @@ const CoverageSelection = ({types, coverage_data, modPapers}) => {
                     <div className="coverage-selection-list">
                         {
                             Object.values(encodingList).map( item => {
+                                let item_id = '';
+                                for (let e of item) {
+                                    item_id+=e+'-';
+                                }
+
                                 return (
-                                    <div className="coverage-selection-item">
+                                    <div className="coverage-selection-item" key={item_id} id={item_id}>
                                         {item.map( e => (<p key={`${e}-1`} className="tag-styled-text">{e}</p>))}
                                         <i className="fas fa-times-circle" onClick={() => removeFromEncodingList(item)}></i>
                                     </div>
@@ -209,7 +227,7 @@ const CoverageSelection = ({types, coverage_data, modPapers}) => {
                             {types.map((t) => {
                                 gridStatus[t] = false;
                                 return (
-                                <CoverageCell key={`${t}-2`} category='coverage-none' name={t} 
+                                <CoverageCell row='1' key={`${t}-2`} category='coverage-none' name={t} 
                                 handleClick={() => handleClick(1,t)} isActive={selectedFirstEncoding === t} type="filter"/>);
                             })}
                         </div>
@@ -222,7 +240,7 @@ const CoverageSelection = ({types, coverage_data, modPapers}) => {
                             {types.map((t) =>{
                                 gridStatus[t] = false;
                                 return (
-                                <CoverageCell key={`${t}-3`} category='coverage-none' name={t} 
+                                <CoverageCell row='2' key={`${t}-3`} category='coverage-none' name={t} 
                                 handleClick={() => handleClick(2,t)} isActive={selectedSecondEncoding === t} type="filter" />);
                             })}
                         </div>
@@ -235,7 +253,7 @@ const CoverageSelection = ({types, coverage_data, modPapers}) => {
                             {types.map((t) =>{
                                 gridStatus[t] = false;
                                 return (
-                                <CoverageCell key={`${t}-4`} category='coverage-none' name={t} 
+                                <CoverageCell row='3' key={`${t}-4`} category='coverage-none' name={t} 
                                 handleClick={() => handleClick(3,t)} isActive={selectedThirdEncoding === t} type="filter" />);
                             })}
                         </div>

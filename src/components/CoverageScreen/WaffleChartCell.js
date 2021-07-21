@@ -114,9 +114,9 @@ const StyledChartCellContainer = styled.div`
 
 var WaffleChartCell = ({category, name}) => {
     return (
-        <StyledChartCellContainer key={name}>
+        <StyledChartCellContainer key={name} data-testid={name}>
             <div className={`grid-values ${category.toLowerCase()+"-deactive"}`} >
-                <span class="tooltiptext">
+                <span className="tooltiptext">
                     <div>
                         <p className="tooltip-title">Coverage:</p>
                         <p className={`tooltip-tag tag-${category.toLowerCase()}`}>        {category.toLowerCase()} 
