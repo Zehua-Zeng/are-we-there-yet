@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- bootstrap CSS-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome JS -->
+    <script
+      src="https://kit.fontawesome.com/d494f7bb71.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Scrollbar Custom CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"
+    />
+    <!-- JQuery JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      type="text/javascript"
+    ></script>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand mb-0 h1" href="#">
+        Are We There Yet &nbsp;<i class="fa fa-question"></i>
+      </a>
+    </nav>
+
+    <!-- Filter -->
+    <div class="container-fluid top-container">
+      <div class="row">
+        <div class="col-6">
+          <!-- Paper Cat -->
+          <div class="form-inline my-2 my-lg-0">
+            <b>Paper Category:</b> &nbsp;
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="catOptions"
+                id="theory-check"
+                value="theory"
+                checked
+              />
+              <label
+                for="theory-check"
+                id="theory-check-label"
+                class="Theory-bg"
+                ;
+              ></label>
+              &nbsp;Theory
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="catOptions"
+                id="experiment-check"
+                value="experiment"
+                checked
+              />
+              <label
+                for="experiment-check"
+                id="experiment-check-label"
+                class="Experiment-bg"
+                ;
+              ></label>
+              &nbsp;Experiment
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="catOptions"
+                id="hybrid-check"
+                value="hybrid"
+                checked
+              />
+              <label
+                for="hybrid-check"
+                id="hybrid-check-label"
+                class="Hybrid-bg"
+                ;
+              ></label>
+              &nbsp; Hybrid
+            </div>
+          </div>
+
+          <!-- Task Types-->
+          <!--
+                  retrieve-value
+                  filter 
+                  compute-derived-value
+                  find-extremum
+                  sort
+                  determine-range
+                  characterize-distribution
+                  find-anomalies
+                  cluster
+                  correlate
+
+                  compare-derived-values
+                  detect-presence
+                  estimate-trend
+                  estimate-difference
+                  locate
+                  recognize
+                  explore-adjacency
+
+                  judge-similarity
+                  compare-chart-structure
+              -->
+          <hr style="margin-top: 0" />
+          <div class="form-inline my-2 my-lg-0">
+            <b>Tasks:</b> &nbsp;
+            <input
+              class="btn btn-success btn-sm"
+              id="select-all-tasks"
+              type="select"
+              value="Select All"
+            />
+            <input
+              class="btn btn-secondary btn-sm"
+              id="clear-all-tasks"
+              type="clear"
+              value="Clear All"
+            />
+          </div>
+          <div class="form-inline my-2 my-lg-0">
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="retrieve-value-check"
+                value="retrieve-value"
+                checked
+              />
+              <label
+                for="retrieve-value-check"
+                id="retrieve-value-check-label"
+                class="task1-bg"
+                ;
+              ></label>
+              &nbsp; Retrieve Value
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="filter-check"
+                value="filter"
+                checked
+              />
+              <label
+                for="filter-check"
+                id="filter-check-label"
+                class="task1-bg"
+                ;
+              ></label>
+              &nbsp;Filter
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="compute-derived-value-check"
+                value="compute-derived-value"
+                checked
+              />
+              <label
+                for="compute-derived-value-check"
+                id="compute-derived-value-check-label"
+                class="task1-bg"
+                ;
+              ></label>
+              &nbsp;Compute Derived Value
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="find-extremum-check"
+                value="find-extremum"
+                checked
+              />
+              <label
+                for="find-extremum-check"
+                id="find-extremum-check-label"
+                class="task1-bg"
+                ;
+              ></label>
+              &nbsp;Find Extremum
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="sort-check"
+                value="sort"
+                checked
+              />
+              <label
+                for="sort-check"
+                id="sort-check-label"
+                class="task1-bg"
+                ;
+              ></label>
+              &nbsp;Sort
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="determine-range-check"
+                value="determine-range"
+                checked
+              />
+              <label
+                for="determine-range-check"
+                id="determine-range-check-label"
+                class="task1-bg"
+                ;
+              ></label>
+              &nbsp;Determine Range
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="characterize-distribution-check"
+                value="characterize-distribution"
+                checked
+              />
+              <label
+                for="characterize-distribution-check"
+                id="characterize-distribution-check-label"
+                class="task1-bg"
+                ;
+              ></label>
+              &nbsp;Characterize Distribution
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="find-anomalies-check"
+                value="find-anomalies"
+                checked
+              />
+              <label
+                for="find-anomalies-check"
+                id="find-anomalies-check-label"
+                class="task1-bg"
+                ;
+              ></label>
+              &nbsp;Find Anomalies
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="cluster-check"
+                value="cluster"
+                checked
+              />
+              <label
+                for="cluster-check"
+                id="cluster-check-label"
+                class="task1-bg"
+                ;
+              ></label>
+              &nbsp;Cluster
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="correlate-check"
+                value="correlate"
+                checked
+              />
+              <label
+                for="correlate-check"
+                id="correlate-check-label"
+                class="task1-bg"
+                ;
+              ></label>
+              &nbsp;Correlate
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="compare-derived-values-check"
+                value="compare-derived-values"
+                checked
+              />
+              <label
+                for="compare-derived-values-check"
+                id="compare-derived-values-check-label"
+                class="task2-bg"
+                ;
+              ></label>
+              &nbsp;Compare Derived Values
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="detect-presence-check"
+                value="detect-presence"
+                checked
+              />
+              <label
+                for="detect-presence-check"
+                id="detect-presence-check-label"
+                class="task2-bg"
+                ;
+              ></label>
+              &nbsp;Detect Presence
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="estimate-trend-check"
+                value="estimate-trend"
+                checked
+              />
+              <label
+                for="estimate-trend-check"
+                id="estimate-trend-check-label"
+                class="task2-bg"
+                ;
+              ></label>
+              &nbsp;Estimate Trend
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="estimate-difference-check"
+                value="estimate-difference"
+                checked
+              />
+              <label
+                for="estimate-difference-check"
+                id="estimate-difference-check-label"
+                class="task2-bg"
+                ;
+              ></label>
+              &nbsp;Estimate Difference
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="locate-check"
+                value="locate"
+                checked
+              />
+              <label
+                for="locate-check"
+                id="locate-check-label"
+                class="task2-bg"
+                ;
+              ></label>
+              &nbsp;Locate
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="recognize-check"
+                value="recognize"
+                checked
+              />
+              <label
+                for="recognize-check"
+                id="recognize-check-label"
+                class="task2-bg"
+                ;
+              ></label>
+              &nbsp;Recognize
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="explore-adjacency-check"
+                value="explore-adjacency"
+                checked
+              />
+              <label
+                for="explore-adjacency-check"
+                id="explore-adjacency-check-label"
+                class="task2-bg"
+                ;
+              ></label>
+              &nbsp;Explore Adjacency
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="judge-similarity-check"
+                value="judge-similarity"
+                checked
+              />
+              <label
+                for="judge-similarity-check"
+                id="judge-similarity-check-label"
+                class="task3-bg"
+                ;
+              ></label>
+              &nbsp;Judge Similarity
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="taskOptions"
+                id="compare-chart-structure-check"
+                value="compare-chart-structure"
+                checked
+              />
+              <label
+                for="compare-chart-structure-check"
+                id="compare-chart-structure-check-label"
+                class="task3-bg"
+                ;
+              ></label>
+              &nbsp;Compare Chart Structure
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <!-- # of Encodings-->
+          <div class="form-inline my-2 my-lg-0">
+            <b># of Encodings:</b> &nbsp;
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="numOptions"
+                id="one-check"
+                value="1-encoding"
+                checked
+              />
+              <label
+                for="one-check"
+                id="one-check-label"
+                style="background-color: #f0ad4e"
+                ;
+              ></label>
+              &nbsp;1-encoding
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="numOptions"
+                id="two-check"
+                value="2-encoding"
+                checked
+              />
+              <label
+                for="two-check"
+                id="two-check-label"
+                style="background-color: #f0ad4e"
+                ;
+              ></label>
+              &nbsp;2-encoding
+            </div>
+
+            <div class="squaredThree">
+              <input
+                type="checkbox"
+                name="numOptions"
+                id="three-check"
+                value="3-encoding"
+                checked
+              />
+              <label
+                for="three-check"
+                id="three-check-label"
+                style="background-color: #f0ad4e"
+                ;
+              ></label>
+              &nbsp;3-encoding
+            </div>
+          </div>
+          <!-- Combination of Encodings-->
+          <hr style="margin-top: 0" />
+          <div class="row">
+            <div class="col-6">
+              <div class="form-inline my-2 my-lg-0">
+                <b>Select Encoding Design:</b> &nbsp;
+                <input
+                  class="btn btn-primary btn-sm"
+                  id="submit-encoding-matrix"
+                  type="submit"
+                  value="Submit"
+                />
+                <input
+                  class="btn btn-secondary btn-sm"
+                  id="clear-encoding-matrix"
+                  type="submit"
+                  value="Clear"
+                />
+              </div>
+              <div id="encoding-matrix"></div>
+            </div>
+            <div class="col-6">
+              <div class="form-inline my-2 my-lg-0">
+                <b>Selected Encoding Designs:</b> &nbsp;
+                <input
+                  class="btn btn-secondary btn-sm"
+                  id="clear-design-seclection"
+                  type="clear"
+                  value="Clear All"
+                />
+              </div>
+              <div id="design-selection" class="design-selection"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Paper View-->
+    <div class="container-fluid bottom-container">
+      <hr />
+
+      <div class="row">
+        <div class="col-2">
+          <h5>Covered Designs:&nbsp;</h5>
+          <p><span id="num-of-designs"></span> out of 298 designs</p>
+          <div class="paper-view">
+            <br />
+            <div id="covered-designs"></div>
+          </div>
+        </div>
+        <div class="col-5">
+          <!-- Paper Summary-->
+          <h5>Summary View:&nbsp;</h5>
+          <span id="num-of-papers"></span> papers
+
+          <div class="paper-view border border-secondary rounded">
+            <div id="paper-summary"></div>
+          </div>
+        </div>
+        <div class="col-5">
+          <!-- Paper Detail-->
+          <h5>Detail View</h5>
+
+          <div class="paper-view border border-secondary rounded">
+            <div id="paper-detail"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- libs -->
+    <!-- D3 JS -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Main JS -->
+    <script src="/js/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+  </body>
+</html>
